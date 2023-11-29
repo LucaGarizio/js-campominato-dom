@@ -1,0 +1,88 @@
+/* stile generale */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* header */
+header{
+    height: 100px;
+    background-color: #fff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+nav img {
+    width: 100px;
+}
+
+nav h1 {
+    font-size: 40px;
+}
+
+button {
+    margin-right: 20px;
+    font-size: 25px;
+    width: 150px;   
+}
+
+
+/* main */
+main{
+    height: calc(100vh - 175px);
+    background-color: #7fffd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.square {
+    display: flex;
+    width: 10%;
+    height: 60px;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.clicked{
+    background-color: lightblue;
+}
+
+.bomb{
+    background-color: red;
+}
+
+.safe{
+    background-color: blue;
+}
+
+/* footer */
+footer {
+    height: 75px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+span {
+    margin-left: 20px;
+    font-size: 20px;
+}
