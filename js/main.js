@@ -43,9 +43,13 @@ startGame.addEventListener("click",
 
                     // collegamento classe css all'elemento square
                     square.classList.add("clicked");
-                  
-                    // stampare su schermo il numero della cella selezionata
-                    alert("Hai selezionato la cella n°: "+ i);
+                    
+                    if (arrayBomb.includes(i)) {
+                        square.classList.add("bomb")
+                        alert("Hai pestato una bomba! Hai Perso");
+                    } else{
+                        square.classList.add("safe");  
+                    }
                 }
             );  
         }   
@@ -63,6 +67,10 @@ startGame.addEventListener("click",
 
 // Altrimenti la cella cliccata si colora di azzurro e l’utente può continuare a cliccare sulle altre celle.
 
+
+let arrayBomb = createRandomNumbersForArray(1, 100, 16);
+
+console.log(arrayBomb);
 
 
 // // creazione funzione per array di numeri casuali da 1 a 100 e quante bombe deve creare
