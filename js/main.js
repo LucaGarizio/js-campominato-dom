@@ -17,7 +17,7 @@ const container = document.querySelector(".container");
 const score = document.getElementById("score");
 // punteggio iniziale = 0
 let punteggio = 0;
-// variabile per finire il gioco
+// variabile per finire il gioco (BONUS)
 let gameOver = false;
 
 
@@ -25,6 +25,11 @@ let gameOver = false;
 startGame.addEventListener("click", 
     // creare funzione per creazione celle
     function(){
+        // impostare 
+        document.getElementById("titolo").classList.remove("hidden");
+        score.innerHTML = "";
+        punteggio = 0;
+        gameOver = false;
         // svuota il contenuto del container cosi da non far comparire celle ogni volta che si clicca il tasto play
         container.innerHTML = "";
         for (let i = 1; i <= 100; i++) {
