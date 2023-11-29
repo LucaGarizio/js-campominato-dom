@@ -1,14 +1,12 @@
-// PRIMO ESERCIZIO 
+// SECONDO ESERCIZIO 
 
-// L’utente clicca su un bottone che genererà una griglia di gioco quadrata.
-// Ogni cella ha un numero progressivo, da 1 a 100.
-// Ci saranno quindi 10 caselle per ognuna delle 10 righe.
-// Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.// 
+// Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: 
 
+// le bombe. Attenzione: nella stessa cella può essere posizionata al massimo una bomba, perciò nell’array delle bombe non potranno esserci due numeri uguali.
 
-// Consigli del giorno:
-// Scriviamo prima cosa vogliamo fare passo passo in italiano, dividiamo il lavoro in micro problemi.
-// Ad esempio: Di cosa ho bisogno per generare i numeri? Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti. Le validazioni e i controlli possiamo farli anche in un secondo momento.
+// In seguito l’utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina.
+
+// Altrimenti la cella cliccata si colora di azzurro e l’utente può continuare a cliccare sulle altre celle.
 
 
 // creare const da legare al click dell'evento
@@ -17,6 +15,9 @@ const startGame = document.getElementById("genera-campo");
 const container = document.querySelector(".container");
 // creare const per punteggio
 const score = document.getElementById("score");
+// punteggio iniziale = 0
+let punteggio = 0;
+
 
 // creare evento on click
 startGame.addEventListener("click", 
@@ -44,10 +45,14 @@ startGame.addEventListener("click",
 
                     // collegamento classi css all'elemento square
                     if (arrayBomb.includes(i)) {
-                        square.classList.add("bomb")
+                        square.classList.add("bomb");
                         alert("Hai preso una bomba! Hai Perso");
                     } else{
-                        square.classList.add("safe");  
+                        square.classList.add("safe");
+                        // aggiorna il punteggio ogni volta che si trova un casella vuota
+                        punteggio +=1;
+                        // stampa su schermo l'aggiornamento dei punti
+                        score.innerHTML = + punteggio; // Aggiorna l'elemento HTML del punteggi
                     }
                 }
             );  
@@ -56,21 +61,10 @@ startGame.addEventListener("click",
 );
 
 
-// SECONDO ESERCIZIO 
-
-// Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: 
-
-// le bombe. Attenzione: nella stessa cella può essere posizionata al massimo una bomba, perciò nell’array delle bombe non potranno esserci due numeri uguali.
-
-// In seguito l’utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina.
-
-// Altrimenti la cella cliccata si colora di azzurro e l’utente può continuare a cliccare sulle altre celle.
-
-
+// creare variabile che si collega alla funzione
 let arrayBomb = createRandomNumbersForArray(1, 100, 16);
-
+// log per sapere in quale cella ci sono le bombe
 console.log(arrayBomb);
-
 
 // // creazione funzione per array di numeri casuali da 1 a 100 e quante bombe deve creare
 function createRandomNumbersForArray(numMin, numMax, quanteBombe) {
