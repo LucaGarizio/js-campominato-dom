@@ -17,6 +17,8 @@ const container = document.querySelector(".container");
 const score = document.getElementById("score");
 // punteggio iniziale = 0
 let punteggio = 0;
+// variabile per finire il gioco
+let gameOver = false;
 
 
 // creare evento on click
@@ -26,7 +28,7 @@ startGame.addEventListener("click",
         // svuota il contenuto del container cosi da non far comparire celle ogni volta che si clicca il tasto play
         container.innerHTML = "";
         for (let i = 1; i <= 100; i++) {
-
+            
             // creare const per creare elemento div
             const square = document.createElement("div");
 
@@ -41,12 +43,18 @@ startGame.addEventListener("click",
             
             // creazione evento per cambio di colore della cella al click
             square.addEventListener("click",
-                function(){
+                function() {
+                    // se perdi interrompi la funzione(BONUS)
+                    if (gameOver) return;
 
                     // collegamento classi css all'elemento square
                     if (arrayBomb.includes(i)) {
                         square.classList.add("bomb");
-                        alert("Hai preso una bomba! Hai Perso");
+                        // cambiare in vero la variabile game over
+                        gameOver = true;
+                        // cancella il titolo 
+                        document.getElementById("titolo").classList.add("hidden");
+                        score.innerHTML = "Hai perso! Il tuo punteggio è: " +punteggio;
                     } else{
                         square.classList.add("safe");
                         // aggiorna il punteggio ogni volta che si trova un casella vuota

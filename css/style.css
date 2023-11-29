@@ -35,6 +35,15 @@ nav h1 {
     margin-right: 150px;
 }
 
+.score-container h2{
+    font-size: 30px;
+}
+
+.hidden{
+    display: none;
+}
+
+
 .score-container h3{
     font-size: 25px;
     display: flex;
@@ -42,9 +51,7 @@ nav h1 {
     margin-top: 10px;
 }
 
-.score-container h2{
-    font-size: 30px;
-}
+
 
 button {
     margin-right: 40px;
