@@ -15,7 +15,8 @@
 const startGame = document.getElementById("genera-campo");
 // creare const per appendere celle
 const container = document.querySelector(".container");
-
+// creare const per punteggio
+const score = document.getElementById("score");
 
 // creare evento on click
 startGame.addEventListener("click", 
@@ -41,12 +42,10 @@ startGame.addEventListener("click",
             square.addEventListener("click",
                 function(){
 
-                    // collegamento classe css all'elemento square
-                    square.classList.add("clicked");
-                    
+                    // collegamento classi css all'elemento square
                     if (arrayBomb.includes(i)) {
                         square.classList.add("bomb")
-                        alert("Hai pestato una bomba! Hai Perso");
+                        alert("Hai preso una bomba! Hai Perso");
                     } else{
                         square.classList.add("safe");  
                     }

@@ -31,8 +31,23 @@ nav h1 {
     font-size: 40px;
 }
 
+.score-container{
+    margin-right: 150px;
+}
+
+.score-container h3{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.score-container h2{
+    font-size: 30px;
+}
+
 button {
-    margin-right: 20px;
+    margin-right: 40px;
     font-size: 25px;
     width: 150px;   
 }
@@ -45,12 +60,13 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .container {
     width: 40%;
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;   
 }
 
 .square {
@@ -60,6 +76,7 @@ main{
     border: 1px solid black;
     justify-content: center;
     align-items: center;
+    font-size: 20px;
 }
 
 .clicked{
